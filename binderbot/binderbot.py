@@ -64,7 +64,7 @@ class BinderUser:
         self.log.msg(f'Binder: Starting', action='binder-start', phase='start')
 
         try:
-            launch_url = self.binder_url / 'build/gh/' / self.repo / self.ref
+            launch_url = self.binder_url / 'v2/gh/' / self.repo / self.ref
             self.log.msg(f'Binder: Get {launch_url}', action='binder-start', phase='get-launch-url')
             resp = await self.session.get(launch_url)
         except Exception as e:
